@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NYCSchools</string>
+    <string name="number_of_test_takers_header">Number of Test Takers:</string>
+    <string name="critical_reading_header">Average Critical Reading Score:</string>
+    <string name="math_header">Average Math Score:</string>
+    <string name="writing_header">Average Writing Score:</string>
 </resources>

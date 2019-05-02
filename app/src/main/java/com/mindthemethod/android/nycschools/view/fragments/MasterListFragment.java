@@ -1,5 +1,6 @@
 package com.mindthemethod.android.nycschools.view.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mindthemethod.android.nycschools.R;
 import com.mindthemethod.android.nycschools.model.School;
+import com.mindthemethod.android.nycschools.view.DetailActivity;
 import com.mindthemethod.android.nycschools.view.adapters.SchoolAdapter;
 import com.mindthemethod.android.nycschools.viewmodel.SchoolViewModel;
 
@@ -70,5 +72,8 @@ public class MasterListFragment extends Fragment implements SchoolAdapter.School
     public void onClick(int adapterPosition, School school) {
         Log.v(LOG_TAG, school.getName());
         Toast.makeText(getContext(), "" + school.getName(), Toast.LENGTH_SHORT).show();
+        Intent detailIntent = new Intent(getContext(), DetailActivity.class);
+        detailIntent.putExtra("School", school);
+        startActivity(detailIntent);
     }
 }
