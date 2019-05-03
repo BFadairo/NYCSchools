@@ -36,8 +36,14 @@ public class DetailFragment extends Fragment {
     TextView schoolName;
     @BindView(R.id.school_website)
     TextView schoolWebsite;
+    @BindView(R.id.school_address)
+    TextView schoolAddress;
+    @BindView(R.id.school_number)
+    TextView schoolNumber;
     private TestViewModel testViewModel;
     private School retrievedSchool;
+    private String address, state, city, phoneNumber;
+    private int zipCode;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -74,11 +80,23 @@ public class DetailFragment extends Fragment {
             readingScore.setText("N/A");
             mathScore.setText("N/A");
             writingScore.setText("N/A");
-
+            getDetails();
             testViewModel.setDbn(retrievedSchool.getDbn());
             schoolWebsite.setText(retrievedSchool.getSchoolWebsite());
+            schoolNumber.setText(phoneNumber);
+
+            String addressString = getContext().getString(R.string.school_address, address, city, state, zipCode);
+            schoolAddress.setText(addressString);
         }
 
         return rootView;
+    }
+
+    private void getDetails() {
+        address = retrievedSchool.getAddress();
+        state = retrievedSchool.getState();
+        city = retrievedSchool.getCity();
+        zipCode = retrievedSchool.getZip();
+        phoneNumber = retrievedSchool.getPhoneNumber();
     }
 }

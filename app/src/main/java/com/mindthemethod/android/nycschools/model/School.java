@@ -8,17 +8,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class School implements Parcelable {
 
-    public static final Creator<School> CREATOR = new Creator<School>() {
-        @Override
-        public School createFromParcel(Parcel source) {
-            return new School(source);
-        }
-
-        @Override
-        public School[] newArray(int size) {
-            return new School[size];
-        }
-    };
     @SerializedName("school_name")
     @Expose
     private String name;
@@ -46,9 +35,28 @@ public class School implements Parcelable {
     @SerializedName("website")
     @Expose
     private String schoolWebsite;
+    public static final Creator<School> CREATOR = new Creator<School>() {
+        @Override
+        public School createFromParcel(Parcel source) {
+            return new School(source);
+        }
 
+        @Override
+        public School[] newArray(int size) {
+            return new School[size];
+        }
+    };
+    @SerializedName("city")
+    @Expose
+    private String city;
+    @SerializedName("state_code")
+    @Expose
+    private String state;
 
-    public School(String name, String address, int zip, String dbn, String phoneNumber, String overview, String schoolSports, String extracurriculars, String schoolWebsite) {
+    public School() {
+    }
+
+    public School(String name, String address, int zip, String dbn, String phoneNumber, String overview, String schoolSports, String extracurriculars, String schoolWebsite, String city, String state) {
         this.name = name;
         this.address = address;
         this.zip = zip;
@@ -58,18 +66,8 @@ public class School implements Parcelable {
         this.schoolSports = schoolSports;
         this.extracurriculars = extracurriculars;
         this.schoolWebsite = schoolWebsite;
-    }
-
-    protected School(Parcel in) {
-        this.name = in.readString();
-        this.address = in.readString();
-        this.zip = in.readInt();
-        this.dbn = in.readString();
-        this.phoneNumber = in.readString();
-        this.overview = in.readString();
-        this.schoolSports = in.readString();
-        this.extracurriculars = in.readString();
-        this.schoolWebsite = in.readString();
+        this.city = city;
+        this.state = state;
     }
 
     public String getName() {
@@ -108,9 +106,36 @@ public class School implements Parcelable {
         return schoolWebsite;
     }
 
+    protected School(Parcel in) {
+        this.name = in.readString();
+        this.address = in.readString();
+        this.zip = in.readInt();
+        this.dbn = in.readString();
+        this.phoneNumber = in.readString();
+        this.overview = in.readString();
+        this.schoolSports = in.readString();
+        this.extracurriculars = in.readString();
+        this.schoolWebsite = in.readString();
+        this.city = in.readString();
+        this.state = in.readString();
+    }
+
+    public static Creator<School> getCREATOR() {
+        return CREATOR;
+    }
+
+
     @Override
     public int describeContents() {
         return 0;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
     }
 
     @Override
@@ -124,5 +149,7 @@ public class School implements Parcelable {
         dest.writeString(this.schoolSports);
         dest.writeString(this.extracurriculars);
         dest.writeString(this.schoolWebsite);
+        dest.writeString(this.city);
+        dest.writeString(this.state);
     }
 }

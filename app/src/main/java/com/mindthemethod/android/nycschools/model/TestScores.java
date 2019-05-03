@@ -29,6 +29,9 @@ public class TestScores {
     @Expose
     private String schoolName;
 
+    public TestScores() {
+    }
+
     public TestScores(String dbn, int numOfTestTakers, int readingAvgScore, int mathAvgScore, int writingAvgScore, String schoolName) {
         this.dbn = dbn;
         this.numOfTestTakers = numOfTestTakers;

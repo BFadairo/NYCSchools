@@ -15,6 +15,7 @@ public class TestViewModel extends ViewModel {
 
     private MediatorLiveData<TestScores> testScoresList;
     private MutableLiveData<String> dbn = new MutableLiveData<>();
+
     private TestRepository testRepository;
 
 
@@ -33,5 +34,9 @@ public class TestViewModel extends ViewModel {
 
     public void setDbn(String dbn) {
         this.dbn.setValue(dbn);
+    }
+
+    public String getDbn() {
+        return this.dbn.getValue();
     }
 }

@@ -13,83 +13,116 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/school_name"
+        android:background="@android:color/black" />
 
-        <LinearLayout
-            android:id="@+id/header_container"
+
+    <TextView
+        android:id="@+id/statistics_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/header_container"
+        android:layout_marginStart="12dp"
+        android:text="SAT Overview"
+        android:textSize="30sp" />
+
+    <View
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:layout_below="@id/statistics_header"
+        android:layout_alignStart="@id/statistics_header"
+        android:layout_centerInParent="true"
+        android:background="@android:color/black" />
+
+    <LinearLayout
+        android:id="@+id/header_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/statistics_header"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/number_of_test_takers_header"
+            style="@style/HeaderAttributes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="vertical">
+            android:text="@string/number_of_test_takers_header" />
 
-            <TextView
-                android:id="@+id/number_of_test_takers_header"
-                style="@style/HeaderAttributes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/number_of_test_takers_header" />
-
-            <TextView
-                android:id="@+id/critical_reading_header"
-                style="@style/HeaderAttributes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/critical_reading_header" />
-
-            <TextView
-                android:id="@+id/math_header"
-                style="@style/HeaderAttributes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/math_header" />
-
-            <TextView
-                android:id="@+id/writing_header"
-                style="@style/HeaderAttributes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/writing_header" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/scores_container"
+        <TextView
+            android:id="@+id/critical_reading_header"
+            style="@style/HeaderAttributes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_centerInParent="true"
-            android:layout_toEndOf="@id/header_container"
-            android:orientation="vertical">
+            android:text="@string/critical_reading_header" />
 
-            <TextView
-                android:id="@+id/number_of_test_takers"
-                style="@style/TestScoreAttributes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                tools:text="91" />
+        <TextView
+            android:id="@+id/math_header"
+            style="@style/HeaderAttributes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/math_header" />
 
-            <TextView
-                android:id="@+id/critical_reading_score"
-                style="@style/TestScoreAttributes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="500" />
+        <TextView
+            android:id="@+id/writing_header"
+            style="@style/HeaderAttributes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/writing_header" />
 
-            <TextView
-                android:id="@+id/math_score"
-                style="@style/TestScoreAttributes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="600" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/writing_score"
-                style="@style/TestScoreAttributes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="500" />
+    <LinearLayout
+        android:id="@+id/scores_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@id/header_container"
+        android:orientation="vertical">
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/number_of_test_takers"
+            style="@style/TestScoreAttributes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            tools:text="91" />
+
+        <TextView
+            android:id="@+id/critical_reading_score"
+            style="@style/TestScoreAttributes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="500" />
+
+        <TextView
+            android:id="@+id/math_score"
+            style="@style/TestScoreAttributes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="600" />
+
+        <TextView
+            android:id="@+id/writing_score"
+            style="@style/TestScoreAttributes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="500" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/school_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/school_address"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        tools:text="614-390-3671" />
 
     <TextView
         android:id="@+id/school_website"
@@ -100,5 +133,15 @@
         android:textSize="20sp"
         android:textStyle="bold"
         tools:text="www.yourwebsite.com" />
+
+    <TextView
+        android:id="@+id/school_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/school_website"
+        android:layout_centerInParent="true"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:text="823 Gilbert Street, Columbus, OH 43206" />
 
 </RelativeLayout>

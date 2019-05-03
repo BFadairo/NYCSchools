@@ -4,4 +4,5 @@
     <string name="critical_reading_header">Average Critical Reading Score:</string>
     <string name="math_header">Average Math Score:</string>
     <string name="writing_header">Average Writing Score:</string>
+    <string name="school_address">%1$s, %2$s, %3$s %4$d</string>
 </resources>
