@@ -24,6 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textStyle="bold|italic"
+                android:gravity="center"
                 tools:text="Clinton School Writers Artists, M.S. 260" />
 
         </LinearLayout>
