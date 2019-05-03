@@ -2,65 +2,49 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/school_name_container"
+    <TextView
+        android:id="@+id/school_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/school_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            tools:text="UNIVERSITY NEIGHBORHOOD HIGH SCHOOL" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/score_container"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_below="@id/school_name_container"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/header_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerInParent="true"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/number_of_test_takers_header"
-                style="@style/TextViewAttributes"
+                style="@style/HeaderAttributes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/number_of_test_takers_header" />
 
             <TextView
                 android:id="@+id/critical_reading_header"
-                style="@style/TextViewAttributes"
+                style="@style/HeaderAttributes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/critical_reading_header" />
 
             <TextView
                 android:id="@+id/math_header"
-                style="@style/TextViewAttributes"
+                style="@style/HeaderAttributes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/math_header" />
 
             <TextView
                 android:id="@+id/writing_header"
-                style="@style/TextViewAttributes"
+                style="@style/HeaderAttributes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/writing_header" />
@@ -68,15 +52,17 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/scores_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginStart="2dp"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@id/header_container"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/number_of_test_takers"
-                style="@style/TextViewAttributes"
+                style="@style/TestScoreAttributes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -84,26 +70,35 @@
 
             <TextView
                 android:id="@+id/critical_reading_score"
-                style="@style/TextViewAttributes"
+                style="@style/TestScoreAttributes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="500" />
 
             <TextView
                 android:id="@+id/math_score"
-                style="@style/TextViewAttributes"
+                style="@style/TestScoreAttributes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="600" />
 
             <TextView
                 android:id="@+id/writing_score"
-                style="@style/TextViewAttributes"
+                style="@style/TestScoreAttributes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="500" />
 
         </LinearLayout>
-    </LinearLayout>
+
+    <TextView
+        android:id="@+id/school_website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="www.yourwebsite.com" />
 
 </RelativeLayout>

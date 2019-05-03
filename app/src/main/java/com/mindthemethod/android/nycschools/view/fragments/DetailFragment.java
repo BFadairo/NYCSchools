@@ -34,6 +34,8 @@ public class DetailFragment extends Fragment {
     TextView writingScore;
     @BindView(R.id.school_name)
     TextView schoolName;
+    @BindView(R.id.school_website)
+    TextView schoolWebsite;
     private TestViewModel testViewModel;
     private School retrievedSchool;
 
@@ -43,13 +45,6 @@ public class DetailFragment extends Fragment {
         testViewModel.getTestScores().observe(this, new Observer<TestScores>() {
             @Override
             public void onChanged(TestScores testScores) {
-                /*if (testScores.getSchoolName() != null) {
-                    Log.v(LOG_TAG, "School is not null");
-                    schoolName.setText(testScores.getSchoolName());
-                } else {
-                    Log.v(LOG_TAG, "School is null");
-                    schoolName.setText(retrievedSchool.getName());
-                }*/
                 if (testScores != null) {
                     numOfTestTakers.setText(String.valueOf(testScores.getNumOfTestTakers()));
                     readingScore.setText(String.valueOf(testScores.getReadingAvgScore()));
@@ -81,6 +76,7 @@ public class DetailFragment extends Fragment {
             writingScore.setText("N/A");
 
             testViewModel.setDbn(retrievedSchool.getDbn());
+            schoolWebsite.setText(retrievedSchool.getSchoolWebsite());
         }
 
         return rootView;
