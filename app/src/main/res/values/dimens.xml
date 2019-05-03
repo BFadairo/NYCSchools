@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Card View Related Dimensions -->
+    <dimen name="card_view_elevation">4dp</dimen>
+    <dimen name="card_view_radius">10dp</dimen>
+    <dimen name="basic_layout_margin">16dp</dimen>
+
+    <!-- Detail Fragment Dimensions -->
+    <dimen name="detail_website_text_size">20sp</dimen>
+    <dimen name="detail_phone_text_size">20sp</dimen>
+    <dimen name="detail_address_text_size">15sp</dimen>
+    <dimen name="sat_overview_text_size">30sp</dimen>
+    <dimen name="school_name_text_size">30sp</dimen>
+    <dimen name="starting_layout_margin">4dp</dimen>
+
+    <!-- Borders -->
+    <dimen name="border_width">380dp</dimen>
+    <dimen name="border_height">1dp</dimen>
+    <dimen name="view_starting_margin">12dp</dimen>
+
+</resources>

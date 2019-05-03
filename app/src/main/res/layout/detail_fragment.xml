@@ -10,12 +10,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:gravity="center"
-        android:textSize="30sp"
+        android:textSize="@dimen/school_name_text_size"
         android:textStyle="bold" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/border_height"
         android:layout_below="@id/school_name"
         android:background="@android:color/black" />
 
@@ -25,13 +25,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/header_container"
-        android:layout_marginStart="12dp"
-        android:text="SAT Overview"
-        android:textSize="30sp" />
+        android:layout_marginStart="@dimen/view_starting_margin"
+        android:text="@string/sat_overview"
+        android:textSize="@dimen/sat_overview_text_size" />
 
     <View
-        android:layout_width="380dp"
-        android:layout_height="1dp"
+        android:layout_width="@dimen/border_width"
+        android:layout_height="@dimen/border_height"
         android:layout_below="@id/statistics_header"
         android:layout_alignStart="@id/statistics_header"
         android:layout_centerInParent="true"
@@ -80,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="@dimen/starting_layout_margin"
         android:layout_toEndOf="@id/header_container"
         android:orientation="vertical">
 
@@ -121,8 +121,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/school_address"
         android:layout_centerInParent="true"
-        android:textSize="20sp"
-        tools:text="614-390-3671" />
+        android:textSize="@dimen/detail_phone_text_size"
+        android:textStyle="bold"
+        tools:text="555-555-5555" />
 
     <TextView
         android:id="@+id/school_website"
@@ -130,7 +131,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:textSize="20sp"
+        android:textSize="@dimen/detail_website_text_size"
         android:textStyle="bold"
         tools:text="www.yourwebsite.com" />
 
@@ -140,8 +141,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/school_website"
         android:layout_centerInParent="true"
-        android:textSize="15sp"
+        android:textSize="@dimen/detail_address_text_size"
         android:textStyle="bold"
-        tools:text="823 Gilbert Street, Columbus, OH 43206" />
+        tools:text="111 Lane Street, Columbus, OH 43206" />
 
 </RelativeLayout>
