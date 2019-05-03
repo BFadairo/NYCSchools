@@ -13,9 +13,12 @@ import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
@@ -23,7 +26,7 @@ public class MainActivityTest {
 
     @Rule
     public ActivityScenarioRule<MainActivity> activityScenarioRule
-            = new ActivityScenarioRule<MainActivity>(MainActivity.class);
+            = new ActivityScenarioRule<>(MainActivity.class);
 
     @Before
     public void waitForLoad() {
@@ -36,12 +39,24 @@ public class MainActivityTest {
 
     @Test
     public void fragmentIsDisplayed() {
-        onView(withId(R.id.school_list_recycler))
+        onView(withId(R.id.fragment_container))
                 .check(matches(isDisplayed()));
     }
 
     @Test
-    public void dataIsLoaded() {
+    public void recyclerviewIsLoaded() {
+        onView(withId(R.id.school_list_recycler))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(100, scrollTo()));
+
+        onView(withId(R.id.school_list_recycler))
+                .check(matches(hasDescendant(withText("Academy of Finance and Enterprise"))));
+    }
+
+    @Test
+    public void canClickOnSchool() {
+        //This action should click on the associated school
+        //item at position 0
+        //Should then open up the detail activity
         onView(withId(R.id.school_list_recycler))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(currentSchool, click()));
     }
